@@ -6,9 +6,7 @@
  */
 
 #include "Haar.hpp"
-#include <iostream>
 #include <algorithm>
-#include <numeric>
 
 
 

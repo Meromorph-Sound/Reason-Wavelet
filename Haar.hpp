@@ -10,10 +10,10 @@
 
 #include <algorithm>
 #include <vector>
-#include <numeric>
 #include <cmath>
 #include <map>
 #include <memory>
+
 #include "base.hpp"
 
 namespace meromorph { namespace haar {

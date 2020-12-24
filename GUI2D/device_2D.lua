@@ -10,31 +10,35 @@ front = {
     },
   deviceName = {
     offset = { 3200, 250},
-    { path = "TapeHorz", frames = 1 },
+    { path = "Tape_Horizontal_1frames", frames = 1 },
   },
   detail1 = {
-    offset = { 1850, 50 },
-    { path = "Knob_63frames", frames = 63 }
+    offset = { 1100, 80 },
+    { path = "Knob_01_63frames", frames = 63 }
   },
   detail2 = {
-    offset = { 2100, 50 },
-    { path = "Knob_63frames", frames = 63 }
+    offset = { 1400, 80 },
+    { path = "Knob_01_63frames", frames = 63 }
   },
   detail3 = {
-    offset = { 2350, 50 },
-    { path = "Knob_63frames", frames = 63 }
+    offset = { 1700, 80 },
+    { path = "Knob_01_63frames", frames = 63 }
   },
   detail4 = {
-    offset = { 2600, 50 },
-    { path = "Knob_63frames", frames = 63 }
+    offset = { 2000, 80 },
+    { path = "Knob_01_63frames", frames = 63 }
   },
   approximation = {
-    offset = { 2850, 50 },
-    { path = "Knob_63frames", frames = 63 }
+    offset = { 2300, 80 },
+    { path = "Knob_01_63frames", frames = 63 }
   },
   algorithm = {
-    offset = { 3100, 55 },
-    { path = "Button_53_2frames", frames = 2 }
+    offset = { 2650, 100 },
+    { path = "Button_23_2frames", frames = 2 }
+    },
+   algorithmDisplay = {
+    offset = { 2850, 130 },
+    { path = "Lamp_18_2frames", frames = 2 }
   }
 }
 back = {
@@ -45,10 +49,10 @@ back = {
   },
   deviceName = {
     offset = { 50, 220 },
-    { path = "TapeHorz", frames = 1 },
+    { path = "Tape_Horizontal_1frames", frames = 1 },
   },
   audioInL = {
-    offset = { 1000,100 },
+    offset = { 1000,50 },
     { path = "SharedAudioJack", frames = 3 }
   },
   audioOutL = {
@@ -56,7 +60,7 @@ back = {
     { path = "SharedAudioJack", frames = 3 }
   },
     audioInR = {
-    offset = { 1400,100 },
+    offset = { 1400,50 },
     { path = "SharedAudioJack", frames = 3 }
   },
   audioOutR = {

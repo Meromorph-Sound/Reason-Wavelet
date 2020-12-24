@@ -47,7 +47,9 @@ custom_properties = jbox.property_set{
 	rtc_owner = {
 		properties = { instance = jbox.native_object{} }
 	},
-	rt_owner = {}
+	rt_owner = {
+	 properties = {}
+	}
 
 }
 
@@ -86,43 +88,43 @@ for n = 1,4 do
   remote_implementation_chart["/custom_properties/Detail"..n] = remote_item("Detail"..n)
 end
 remote_implementation_chart["/custom_properties/Approximation"] = remote_item("Approximation")
-remote_implementation_chart["/custom_properties/Threshold"] = remote_item("Threshold")
+remote_implementation_chart["/custom_properties/Algorithm"] = remote_item("Algorithm")
 
 jbox.add_stereo_effect_routing_hint{
-  left_input = "/audio_inputs/audioInputL",
-  right_input = "/audio_inputs/audioInputR",
-  left_output = "/audio_outputs/audioOutputL",
-  right_output = "/audio_outputs/audioOutputR",
+  left_input = "/audio_inputs/audioInL",
+  right_input = "/audio_inputs/audioInR",
+  left_output = "/audio_outputs/audioOutL",
+  right_output = "/audio_outputs/audioOutR",
   type = "true_stereo"
 }
 jbox.add_stereo_audio_routing_target{
   signal_type = "return",
-  left = "/audio_inputs/audioInputL",
-  right = "/audio_inputs/audioInputR",
+  left = "/audio_inputs/audioInL",
+  right = "/audio_inputs/audioInR",
   auto_route_enable = true
 }
 jbox.add_stereo_audio_routing_target{
   signal_type = "send",
-  left = "/audio_outputs/audioOutputL",
-  right = "/audio_outputs/audioOutputR",
+  left = "/audio_outputs/audioOutL",
+  right = "/audio_outputs/audioOutR",
   auto_route_enable = true
 }
 jbox.add_stereo_audio_routing_pair{
-  left = "/audio_inputs/audioInputL",
-  right = "/audio_inputs/audioInputR"
+  left = "/audio_inputs/audioInL",
+  right = "/audio_inputs/audioInR"
 }
 jbox.add_stereo_audio_routing_pair{
-  left = "/audio_outputs/audioOutputL",
-  right = "/audio_outputs/audioOutputR"
+  left = "/audio_outputs/audioOutL",
+  right = "/audio_outputs/audioOutR"
 }
 jbox.set_effect_auto_bypass_routing{
   {
-    "/audio_inputs/audioInputL",
-    "/audio_outputs/audioOutputL"
+    "/audio_inputs/audioInL",
+    "/audio_outputs/audioOutL"
   },
   {
-    "/audio_inputs/audioInputR",
-    "/audio_outputs/audioOutputR"
+    "/audio_inputs/audioInR",
+    "/audio_outputs/audioOutR"
   }
 }
 

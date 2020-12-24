@@ -1,14 +1,20 @@
 #pragma once
 
 #include "base.hpp"
-#include "Environment.hpp"
-#include "Properties.hpp"
-#include "IO.hpp"
 #include <vector>
 #include "Haar.hpp"
 
 namespace meromorph {
 namespace wavelet {
+
+enum Tags : Tag {
+	Detail1 = 11,
+	Detail2 = 12,
+	Detail3 = 13,
+	Detail4 = 14,
+	Approximation = 15,
+	Algorithm = 16,
+};
 
 enum Mode : unsigned {
 		Scale = 2,
@@ -16,38 +22,47 @@ enum Mode : unsigned {
 		Threshold = 0
 	};
 
-class WaveletFX {
+class WaveletChannel {
 private:
 	haar::Haar wavelet;
 
-
-		uint32 offset = 0;
-		uint32 ringOffset = 0;
-	Mode alg = Mode::Threshold;
+	TJBox_ObjectRef aIn;
+	TJBox_ObjectRef aOut;
 
 	std::vector<float32> buffer;
 	std::vector<float32> outs;
 	std::vector<float32> ring;
-	Environment env;
-	Properties props;
-	IO io;
+	uint32 ringOffset=0;
 
+	uint32 readAudio();
+	void writeAudio();
 
+public:
+	static const TJBox_Int64 BUFFER_SIZE;
+	WaveletChannel(const char *code);
+
+	void process(const Mode algorithm);
+	void bypass();
+	void reset();
+	void set(const uint32 n,const float32 value) { wavelet.setThreshold(n,value); }
+};
+
+class WaveletFX {
+private:
+	WaveletChannel left;
+	WaveletChannel right;
+
+	Mode alg = Mode::Threshold;
 	State state = State::On;
 
-
-
-
-
+	void set(const uint32 n,const TJBox_Value value);
 
 	void processButtons(const TJBox_PropertyDiff iPropertyDiffs[], uint32 iDiffCount);
-	void bypass();
-	void process();
 public:
 
 	explicit WaveletFX();
 //	~CFollower();
-	void reset();
+
 
     void RenderBatch(const TJBox_PropertyDiff iPropertyDiffs[], TJBox_UInt32 iDiffCount);
 

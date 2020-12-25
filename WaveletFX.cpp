@@ -93,6 +93,12 @@ void WaveletChannel::reset() {
 	wavelet.reset();
 }
 
+bool WaveletChannel::isConnected() const {
+	auto sock = JBox_LoadMOMPropertyByTag(aIn,kJBox_AudioInputConnected);
+	if(JBox_GetType(sock)==kJBox_Boolean) return JBox_GetBoolean(sock);
+	else return false;
+}
+
 WaveletFX::WaveletFX() : left("L"), right("R") {}
 
 
@@ -128,6 +134,10 @@ void WaveletFX::processButtons(const TJBox_PropertyDiff iPropertyDiffs[], uint32
 			left.reset();
 			right.reset();
 			break;
+		case kJBox_AudioInputConnected:
+			connectedL = left.isConnected();
+			connectedR = right.isConnected();
+			break;
 		case Tags::Detail1:
 			set(0,diff.fCurrentValue);
 			break;
@@ -162,8 +172,8 @@ void WaveletFX::RenderBatch(const TJBox_PropertyDiff diffs[], TJBox_UInt32 nDiff
 			right.bypass();
 			break;
 		case State::On:
-			left.process(alg);
-			right.process(alg);
+			if(connectedL) left.process(alg);
+			if(connectedR) right.process(alg);
 			break;
 		}
 }

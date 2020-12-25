@@ -48,23 +48,24 @@ back = {
     { path = "Placeholder" },
   },
   deviceName = {
-    offset = { 50, 220 },
+    offset = { 100, 230 },
     { path = "Tape_Horizontal_1frames", frames = 1 },
   },
   audioInL = {
-    offset = { 1000,50 },
-    { path = "SharedAudioJack", frames = 3 }
-  },
-  audioOutL = {
-    offset = { 1000,200 },
+    offset = { 1000,120 },
     { path = "SharedAudioJack", frames = 3 }
   },
     audioInR = {
-    offset = { 1400,50 },
+    offset = { 1200,120 },
     { path = "SharedAudioJack", frames = 3 }
   },
+  audioOutL = {
+    offset = { 1550,120 },
+    { path = "SharedAudioJack", frames = 3 }
+  },
+  
   audioOutR = {
-    offset = { 1400,200 },
+    offset = { 1750,120  },
     { path = "SharedAudioJack", frames = 3 }
   },
 }

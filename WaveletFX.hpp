@@ -45,6 +45,8 @@ public:
 	void bypass();
 	void reset();
 	void set(const uint32 n,const float32 value) { wavelet.setThreshold(n,value); }
+
+	bool isConnected() const;
 };
 
 class WaveletFX {
@@ -54,6 +56,9 @@ private:
 
 	Mode alg = Mode::Threshold;
 	State state = State::On;
+
+	bool connectedL = false;
+	bool connectedR = false;
 
 	void set(const uint32 n,const TJBox_Value value);
 

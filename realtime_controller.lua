@@ -32,6 +32,8 @@ rt_input_setup = {
   "/custom_properties/Detail3",
   "/custom_properties/Detail4",
   "/custom_properties/Approximation",
-  "/custom_properties/Algorithm"
+  "/custom_properties/Algorithm",
+  "/audio_inputs/audioInL/connected",
+  "/audio_inputs/audioInR/connected",
   }
 }

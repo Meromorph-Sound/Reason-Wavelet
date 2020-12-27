@@ -12,6 +12,7 @@
 #include <type_traits>
 #include <cmath>
 #include <algorithm>
+#include <vector>
 
 
 namespace meromorph {
@@ -30,9 +31,21 @@ enum State : int32 {
 	Off = 0, On = 1, Bypassed = 2
 };
 
+enum Mode : uint32 {
+		Scale = 2,
+		Bypass = 1,
+		Threshold = 0
+	};
+
 void trace(const char *tmpl);
 void trace(const char *tmpl,const float32 value);
 void trace(const char *tmpl,const float32 value1,const float32 value2);
+
+ float32 toFloat(const TJBox_Value diff);
+ bool toBool(const TJBox_Value diff);
+ int32 toInt(const TJBox_Value diff);
+
+ void append(char *str,const char *root,const char *ext);
 
 }
 

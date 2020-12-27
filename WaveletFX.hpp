@@ -1,8 +1,7 @@
 #pragma once
 
 #include "base.hpp"
-#include <vector>
-#include "Haar.hpp"
+#include "Channel.hpp"
 
 namespace meromorph {
 namespace wavelet {
@@ -16,38 +15,9 @@ enum Tags : Tag {
 	Algorithm = 16,
 };
 
-enum Mode : unsigned {
-		Scale = 2,
-		Bypass = 1,
-		Threshold = 0
-	};
 
-class WaveletChannel {
-private:
-	haar::Haar wavelet;
 
-	TJBox_ObjectRef aIn;
-	TJBox_ObjectRef aOut;
 
-	std::vector<float32> buffer;
-	std::vector<float32> outs;
-	std::vector<float32> ring;
-	uint32 ringOffset=0;
-
-	uint32 readAudio();
-	void writeAudio();
-
-public:
-	static const TJBox_Int64 BUFFER_SIZE;
-	WaveletChannel(const char *code);
-
-	void process(const Mode algorithm);
-	void bypass();
-	void reset();
-	void set(const uint32 n,const float32 value) { wavelet.setThreshold(n,value); }
-
-	bool isConnected() const;
-};
 
 class WaveletFX {
 private:

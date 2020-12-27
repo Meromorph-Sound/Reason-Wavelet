@@ -3,18 +3,18 @@ format_version = "1.0"
 -- Note that changing this file requires a Reason/Recon restart
 
 -- Max 40 chars
-long_name = "Wavelet Distortion"
+long_name = "Wavelet Damage"
 
 -- Max 20 chars
-medium_name = "Wavelet Distortion"
+medium_name = "Wavelet Damage"
 
 -- Max 10 chars
 --            1234567890
-short_name = "WvltDist"
+short_name = "WvltDamg"
 
-product_id = "org.porternet.waveletdistortion"
+product_id = "org.porternet.waveletdamage"
 manufacturer = "meromorph"
-version_number = "1.0.0d1"
+version_number = "1.0.0b1"
 device_type = "creative_fx"
 supports_patches = false
 accepts_notes = false

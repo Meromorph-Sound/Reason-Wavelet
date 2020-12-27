@@ -42,3 +42,5 @@ Intermediate-llvm/
 .project
 
 *.plist
+
+Output/

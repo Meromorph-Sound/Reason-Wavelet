@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JukeboxPatch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="patch.xsd" version="1.0">
+    <DeviceNameInEnglish>Wavelet Damage</DeviceNameInEnglish>
+    <Properties deviceProductID="org.porternet.waveletdamage" deviceVersion="1.0.0b1">
+        <Object name="custom_properties">
+            <Value property="Detail1" type="number">0</Value>
+            <Value property="Detail2" type="number">0</Value>
+            <Value property="Detail3" type="number">0</Value>
+            <Value property="Detail4" type="number">0</Value>
+            <Value property="Approximation" type="number">0</Value>
+            <Value property="Algorithm" type="number">0</Value>
+        </Object>
+    </Properties>
+</JukeboxPatch>

@@ -14,9 +14,10 @@ short_name = "WvltDamg"
 
 product_id = "org.porternet.waveletdamage"
 manufacturer = "meromorph"
-version_number = "1.0.0b1"
+version_number = "1.0.0b2"
 device_type = "creative_fx"
-supports_patches = false
+supports_patches = true
+default_patch = "/Public/Default.repatch"
 accepts_notes = false
 auto_create_track = false
 auto_create_note_lane = false
